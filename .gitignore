@@ -1,0 +1,15 @@
+*.o
+*.so
+*.efi
+*.a
+*.lib
+*.img
+
+build/
+.vscode/
+**/tmp/
+tools/**
+!tools/*.sh
+!tools/vagrant/
+!tools/vagrant/**
+.vagrant/
