@@ -43,7 +43,7 @@ echo "Uncompressing gcc-$GCC_VERSION..."
 tar -xf "gcc-$GCC_VERSION.tar.gz"
 echo "Building gcc-$GCC_VERSION..."
 mkdir -p "$BUILD_DIR-gcc" && cd "$BUILD_DIR-gcc"
-sh -c "../gcc-$GCC_VERSION/configure --target=$TARGET --prefix=\"$PREFIX\" --disable-nls --disable-libssp --enable-languages=c,c++ --without-headers"
+sh -c "../gcc-$GCC_VERSION/configure --target=$TARGET --prefix=\"$PREFIX\" --disable-nls --disable-libssp --enable-languages=c,c++"
 make all-gcc -j$(nproc)
 make all-target-libgcc -j$(nproc)
 make install-gcc

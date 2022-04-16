@@ -27,12 +27,12 @@ A W.I.P. template project for UEFI OS development.
 ├── Makefile        // Project's main Makefile (use only this one)
 ├── ovmf-bins       // UEFI BIOS images (needed for QEMU)
 ├── README.md       // Project's README (modify it to your heart's content)
-├── src             // Your OS's source code folder
+├── src             // Your GTMOS's source code folder
 │   ├── bootloader  //    - Bootloader source code and Makefile
 │   ├── kernel      //    - Kernel source code and Makefile
 │   └── libc        //    - C library source code
 ├── tools           // Scripts to set up the development environment (see below for more info)
-└── Vagrantfile     // File needed by Vagrant to set up the VM (you can delete this if you don't plan on using it)
+└── Vagrantfile     // File needed by Vagrant to set up the VM
 ```
 
 
@@ -45,8 +45,8 @@ A W.I.P. template project for UEFI OS development.
 ### Downloading the template
 If you're using GitHub you can just create a new repository using this one as a template by clicking on the green button that says **'Use this template'**, located in the top right of the repository page.  
 Otherwise, open your git client and clone this repository. If you're using a terminal you can just type:  
-```
-git clone --recurse-submodules https://github.com/SkrapeProjects/uefi-os-template.git <project_name>
+```bash
+git clone --recurse-submodules https://github.com/ajh123-development/gtmos-uefi.git
 ```  
 This will clone the repository in a directory named `<project_name>` located in the same directory you ran the command.
 
@@ -88,7 +88,7 @@ In the unlikely event your VM breaks type `vagrant destroy` to reset the VM.
 ### Setting up the build environment
 I provided scripts, stored in the `tools` directory, to automate some tasks. They're made for Ubuntu (they also work under Ubuntu WSL).  
 Here's a list of all the scripts, brief explanation of what they do and the order they should be run in:
-1) `download_deps.sh` Downloads the required dependencies for building the project. Must be run as root. **Not needed if using Vagrant**.
+1) `download_deps.sh` Downloads the required dependencies for building the project. Must be run as root. **Not needed if using Vagrant (as it does it by it self)**.
 2) `setup_crosscompiler.sh` Downloads and compiles BinUtils and GCC for `x86_64-elf` cross compilation and installs them in `tools/x86_64-elf-cross`. May take a while to execute.
 3) `get_latest_ovmf_bins.sh` Downloads and extracts (in the `ovmf-bins` folder) the latest precompiled OVMF firmware from https://www.kraxel.org/repos.
 

@@ -1,11 +1,11 @@
 export PATH := $(abspath tools/x86_64-elf-cross/bin):$(PATH)
+export PATH := $(abspath x86_64-elf-cross/bin):$(PATH)
 
 
 
 
 
-
-OS_NAME = uefios
+OS_NAME = gtmos
 
 BUILD_DIR = $(abspath build)
 SOURCE_DIR = $(abspath src)

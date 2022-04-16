@@ -79,13 +79,13 @@ $(TARGET_BSDRIVERS): SUBSYSTEM = 0xb
 $(TARGET_RTDRIVERS): SUBSYSTEM = 0xc
 
 FORMAT		:= -O binary
-LDFLAGS		+= --defsym=EFI_SUBSYSTEM=$(SUBSYSTEM)
+LDFLAGS		+= --defsym=EFI_SUBSYSTEM=$(SUBSYSTEM) -static -Bsymbolic -nostdlib
 
 endif
 
 TARGETS = $(TARGET_APPS) $(TARGET_BSDRIVERS) $(TARGET_RTDRIVERS)
 
-CFLAGS += -g -Wno-error=unused-parameter -Wno-error=unused-variable
+CFLAGS += -g -Wno-error=unused-parameter -Wno-error=unused-variable -ffreestanding -fshort-wchar
 
 CPPFLAGS += -I$(GNU_EFI)/inc
 

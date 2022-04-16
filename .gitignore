@@ -13,3 +13,5 @@ tools/**
 !tools/vagrant/
 !tools/vagrant/**
 .vagrant/
+
+x86_64-elf-cross
