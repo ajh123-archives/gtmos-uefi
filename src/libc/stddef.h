@@ -1,4 +1,6 @@
 #pragma once
 #define _STDDEF
 
-typedef unsigned long long size_t;
+#define NULL 0
+
+typedef long unsigned int size_t;
